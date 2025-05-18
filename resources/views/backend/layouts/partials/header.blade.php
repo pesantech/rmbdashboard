@@ -75,7 +75,7 @@ x-init="init()"
                     </a>
                 @endif
             </div>
-            
+
 
             @include('backend.layouts.partials.locale-switcher')
 
@@ -83,7 +83,7 @@ x-init="init()"
                 <a class="flex items-center text-gray-700 dark:text-gray-400" href="#"
                     @click.prevent="dropdownOpen = ! dropdownOpen">
                     <span class="mr-3 h-11 w-11 overflow-hidden rounded-full">
-                        <img src="{{ auth()->user()->getGravatarUrl() }}" alt="User" />
+                        <img src="{{ auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : auth()->user()->getGravatarUrl() }}" alt="User" />
                     </span>
 
                     <span class="mr-1 block font-medium" :style="`color: ${textColor}`">
